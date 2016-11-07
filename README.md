@@ -2,8 +2,8 @@
 
 ## Pokretanje
 ```
-git clone
-cd src
+git clone https://github.com/skolakoda/ucimo-opengl.git
+cd ucimo-opengl/src
 make cube
 ./cube
 ```
