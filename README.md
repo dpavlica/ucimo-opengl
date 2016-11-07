@@ -1,4 +1,6 @@
-# ucimo-opengl
+# Učimo OpenGL (Open Graphics Library)
+
+Primeri: https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/examples.html
 
 ## Pokretanje
 ```
@@ -7,5 +9,3 @@ cd ucimo-opengl/src
 make cube
 ./cube
 ```
-
-Primeri: https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/examples.html
