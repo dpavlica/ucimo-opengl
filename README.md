@@ -2,7 +2,9 @@
 
 # Učimo OpenGL
 
-Učimo [OpenGL](https://www.opengl.org) (Open Graphics Library) po primerima sa njihove zvanične adrese: https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/examples.html
+Učimo [OpenGL](https://www.opengl.org) (Open Graphics Library) po primerima sa njihove zvanične stranice:
+
+https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/examples.html
 
 ## Pokretanje
 ```
