@@ -1,5 +1,7 @@
 # Učimo OpenGL (Open Graphics Library)
 
+![opengl](https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/OpenGL_logo_%28Nov14%29.svg/640px-OpenGL_logo_%28Nov14%29.svg.png)
+
 Primeri: https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/examples.html
 
 ## Pokretanje
