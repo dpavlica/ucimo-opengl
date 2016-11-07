@@ -10,6 +10,6 @@ https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/ex
 ```
 git clone https://github.com/skolakoda/ucimo-opengl.git
 cd ucimo-opengl/src
-make cube
-./cube
+make main
+./main
 ```
