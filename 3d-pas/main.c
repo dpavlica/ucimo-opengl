@@ -7,8 +7,6 @@
 static void on_reshape(int width, int height);
 static void on_display(void);
 static void on_keyboard(unsigned char key, int x, int y);
-
-
 /* Metod koji crta model psa */
 static void draw_dog(void);
 
