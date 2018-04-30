@@ -7,9 +7,21 @@ Učimo [OpenGL](https://www.opengl.org) (Open Graphics Library) po primerima sa 
 https://www.opengl.org/archives/resources/code/samples/glut_examples/examples/examples.html
 
 ## Pokretanje
+
+Potrebno je prvo instalirati OpenGL biblioteku, te dodati opcije prevodiocu prilikom prevođenja fajlova:
+
 ```
-git clone https://github.com/skolakoda/ucimo-opengl.git
-cd ucimo-opengl/src
-make main
-./main
+gcc ime-fajla.c -lGL -lGLU -lglut
+```
+
+ili 
+
+```
+gcc ime-fajla.c -o ime-fajla -lGL -lGLU -lglut
+```
+
+Nakon toga pokrenuti izgrađeni izlazni fajl:
+
+```
+./ime-fajla
 ```

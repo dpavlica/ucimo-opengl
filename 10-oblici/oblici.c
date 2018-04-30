@@ -1,26 +1,13 @@
-/*
- *  scene.c
- *  This program demonstrates the use of the GL lighting model.
- *  Objects are drawn using a grey material characteristic.
- *  A single light source illuminates the objects.
- */
 #include <stdlib.h>
 #include <GL/glut.h>
 
-/*  Initialize material property and light source.
- */
-void
-myinit(void)
+void initLight(void)
 {
-    GLfloat light_ambient[] =
-    {0.0, 0.0, 0.0, 1.0};
-    GLfloat light_diffuse[] =
-    {1.0, 0.0, 0.0, 1.0};
-    GLfloat light_specular[] =
-    {1.0, 1.0, 1.0, 1.0};
-/* light_position is NOT default value */
-    GLfloat light_position[] =
-    {1.0, 1.0, 1.0, 0.0};
+    GLfloat light_ambient[] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat light_diffuse[] = {1.0, 0.0, 0.0, 1.0};
+    GLfloat light_specular[] = {1.0, 1.0, 1.0, 1.0};
+    /* light_position is NOT default value */
+    GLfloat light_position[] = {1.0, 1.0, 1.0, 0.0};
 
     glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
@@ -33,8 +20,7 @@ myinit(void)
     glEnable(GL_LIGHTING);
 }
 
-void
-display(void)
+void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -63,25 +49,24 @@ display(void)
     glFlush();
 }
 
-void
-myReshape(int w, int h)
+void reshape(int w, int h)
 {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     if (w <= h)
-        glOrtho(-2.5, 2.5, -2.5 * (GLfloat) h / (GLfloat) w,
-            2.5 * (GLfloat) h / (GLfloat) w, -10.0, 10.0);
+        glOrtho(-2.5, 2.5, -2.5 * (GLfloat)h / (GLfloat)w,
+                2.5 * (GLfloat)h / (GLfloat)w, -10.0, 10.0);
     else
-        glOrtho(-2.5 * (GLfloat) w / (GLfloat) h,
-            2.5 * (GLfloat) w / (GLfloat) h, -2.5, 2.5, -10.0, 10.0);
+        glOrtho(-2.5 * (GLfloat)w / (GLfloat)h,
+                2.5 * (GLfloat)w / (GLfloat)h, -2.5, 2.5, -10.0, 10.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
-void
-polygon_mode(int value)
+void polygon_mode(int value)
 {
-    switch (value) {
+    switch (value)
+    {
     case 1:
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_LIGHTING);
@@ -101,19 +86,13 @@ polygon_mode(int value)
     glutPostRedisplay();
 }
 
-void
-main_menu(int value)
+void main_menu(int value)
 {
     if (value == 666)
         exit(0);
 }
 
-/*  Main Loop
- *  Open window with initial window size, title bar,
- *  RGBA display mode, and handle input events.
- */
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
     int submenu;
 
@@ -121,9 +100,10 @@ main(int argc, char **argv)
     glutInitWindowPosition(500, 500);
     glutInitWindowSize(500, 500);
     glutCreateWindow(argv[0]);
-    myinit();
-    glutReshapeFunc(myReshape);
+    initLight();
+    glutReshapeFunc(reshape);
     glutDisplayFunc(display);
+    // otvara meni na desno dugme
     submenu = glutCreateMenu(polygon_mode);
     glutAddMenuEntry("Filled", 1);
     glutAddMenuEntry("Outline", 2);
@@ -132,5 +112,6 @@ main(int argc, char **argv)
     glutAddSubMenu("Polygon mode", submenu);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
     glutMainLoop();
-    return 0;             /* ANSI C requires main to return int. */
+
+    return 0;
 }
